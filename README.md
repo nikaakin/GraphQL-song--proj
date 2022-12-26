@@ -4,8 +4,9 @@ Starter project from a GraphQL course on Udemy.com
 Back-end - https://github.com/mishamilovidov/graphql-lyrical
 
 ### Used queries:
+```
 
--query getSongs {
+query getSongs {
   songs {
     id
     title
@@ -14,7 +15,7 @@ Back-end - https://github.com/mishamilovidov/graphql-lyrical
 
 
 
--query getSong($id: ID!) {
+query getSong($id: ID!) {
   song(id: $id) {
     id
     title
@@ -26,7 +27,7 @@ Back-end - https://github.com/mishamilovidov/graphql-lyrical
   }
 }
 
--mutation addLyric($id: ID, $content: String) {
+mutation addLyric($id: ID, $content: String) {
   addLyricToSong(content: $content, songId: $id) {
     id
     title
@@ -39,23 +40,25 @@ Back-end - https://github.com/mishamilovidov/graphql-lyrical
 }
 
 
--mutation likeLyric($id: ID){
+mutation likeLyric($id: ID){
 	likeLyric(id:$id){
 		id
     likes
   }
 }
 
--mutation createSong($title: String){
+mutation createSong($title: String){
 	addSong(title: $title){
 		id
     title
   }
 }
 
--mutation deleteSong($id: ID) {
+mutation deleteSong($id: ID) {
   deleteSong(id: $id) {
     id
     title
   }
 }
+
+```
